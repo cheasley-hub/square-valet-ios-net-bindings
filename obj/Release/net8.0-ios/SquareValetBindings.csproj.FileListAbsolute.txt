@@ -1,0 +1,13 @@
+/Users/codyheasley/RiderProjects/SquareValetBindings/bin/Release/net8.0-ios/SquareValetBindings.resources.stamp
+/Users/codyheasley/RiderProjects/SquareValetBindings/bin/Release/net8.0-ios/SquareValetBindings.dll
+/Users/codyheasley/RiderProjects/SquareValetBindings/bin/Release/net8.0-ios/SquareValetBindings.pdb
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/_ProcessedBundleResourcesPath.items
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/_ProcessedContentPath.items
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.GeneratedMSBuildEditorConfig.editorconfig
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.AssemblyInfoInputs.cache
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.AssemblyInfo.cs
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.csproj.CoreCompileInputs.cache
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.dll
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/refint/SquareValetBindings.dll
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/SquareValetBindings.pdb
+/Users/codyheasley/RiderProjects/SquareValetBindings/obj/Release/net8.0-ios/ref/SquareValetBindings.dll

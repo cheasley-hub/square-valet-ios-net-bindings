@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "qzYlDPhbtAo=",
+  "success": true,
+  "projectFilePath": "/Users/codyheasley/RiderProjects/SquareValetBindings/SquareValetBindings.csproj",
+  "expectedPackageFiles": [
+    "/Users/codyheasley/.nuget/packages/microsoft.net.illink.tasks/8.0.10/microsoft.net.illink.tasks.8.0.10.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://dvsbuild.eastus2.cloudapp.azure.com/httpAuth/app/nuget/v1/FeedService.svc/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name Valet
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import Foundation
+import LocalAuthentication
+import Swift
+@_exported import Valet
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc(VALAccessibility) public enum Accessibility : Swift.Int, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Equatable, Swift.Sendable {
+  case whenUnlocked = 1
+  case afterFirstUnlock = 2
+  case whenPasscodeSetThisDeviceOnly = 4
+  case whenUnlockedThisDeviceOnly = 5
+  case afterFirstUnlockThisDeviceOnly = 6
+  public var description: Swift.String {
+    get
+  }
+  public var secAccessibilityAttribute: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Valet.Accessibility]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [Valet.Accessibility] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(VALCloudAccessibility) public enum CloudAccessibility : Swift.Int, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Equatable, Swift.Sendable {
+  case whenUnlocked = 1
+  case afterFirstUnlock = 2
+  public var description: Swift.String {
+    get
+  }
+  public var accessibility: Valet.Accessibility {
+    get
+  }
+  public var secAccessibilityAttribute: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Valet.CloudAccessibility]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [Valet.CloudAccessibility] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct Identifier : Swift.CustomStringConvertible, Swift.Sendable {
+  public init?(nonEmpty string: Swift.String?)
+  public var description: Swift.String {
+    get
+  }
+}
+@objc(VALKeychainError) public enum KeychainError : Swift.Int, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Error, Swift.Equatable, Swift.Sendable {
+  case couldNotAccessKeychain
+  case userCancelled
+  case itemNotFound
+  case missingEntitlement
+  case emptyKey
+  case emptyValue
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Valet.KeychainError]
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  nonisolated public static var allCases: [Valet.KeychainError] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct MigratableKeyValuePair<Key> : Swift.Hashable where Key : Swift.Hashable {
+  public init(key: Key, value: Foundation.Data)
+  public init(key: Key, value: Swift.String)
+  public let key: Key
+  public let value: Foundation.Data
+  public static func == (a: Valet.MigratableKeyValuePair<Key>, b: Valet.MigratableKeyValuePair<Key>) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(VALMigratableKeyValuePairInput) final public class ObjectiveCCompatibilityMigratableKeyValuePairInput : ObjectiveC.NSObject {
+  @objc final public let key: Any
+  @objc final public let value: Foundation.Data
+  @objc deinit
+}
+@objc(VALMigratableKeyValuePairOutput) public class ObjectiveCCompatibilityMigratableKeyValuePairOutput : ObjectiveC.NSObject {
+  @objc public init(key: Swift.String, value: Foundation.Data)
+  @objc public init(key: Swift.String, stringValue: Swift.String)
+  @available(swift, obsoleted: 1.0)
+  @objc public static func preventMigration() -> Valet.ObjectiveCCompatibilityMigratableKeyValuePairOutput
+  @objc final public let key: Swift.String
+  @objc final public let value: Foundation.Data
+  @objc deinit
+}
+@objc(VALMigrationResult) public enum MigrationError : Swift.Int, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.Error, Swift.Equatable, Swift.Sendable {
+  case invalidQuery
+  case keyToMigrateInvalid
+  case dataToMigrateInvalid
+  case duplicateKeyToMigrate
+  case keyToMigrateAlreadyExistsInValet
+  case removalFailed
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Valet.MigrationError]
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  nonisolated public static var allCases: [Valet.MigrationError] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class SecureEnclave : Swift.Sendable {
+  @objc deinit
+}
+@objc(VALSecureEnclaveAccessControl) public enum SecureEnclaveAccessControl : Swift.Int, Swift.CustomStringConvertible, Swift.Equatable, Swift.Sendable {
+  case userPresence = 1
+  case biometricAny
+  case biometricCurrentSet
+  case devicePasscode
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VALSecureEnclaveValet) final public class SecureEnclaveValet : ObjectiveC.NSObject, Swift.Sendable {
+  final public class func valet(with identifier: Valet.Identifier, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SecureEnclaveValet
+  final public class func sharedGroupValet(with groupIdentifier: Valet.SharedGroupIdentifier, identifier: Valet.Identifier? = nil, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SecureEnclaveValet
+  public static func == (lhs: Valet.SecureEnclaveValet, rhs: Valet.SecureEnclaveValet) -> Swift.Bool
+  @available(*, unavailable)
+  @objc override dynamic public init()
+  @objc override final public var hash: Swift.Int {
+    @objc get
+  }
+  final public let identifier: Valet.Identifier
+  @objc final public let accessControl: Valet.SecureEnclaveAccessControl
+  @objc final public func canAccessKeychain() -> Swift.Bool
+  @objc final public func setObject(_ object: Foundation.Data, forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func object(forKey key: Swift.String, withPrompt userPrompt: Swift.String) throws(Valet.KeychainError) -> Foundation.Data
+  final public func containsObject(forKey key: Swift.String) throws(Valet.KeychainError) -> Swift.Bool
+  @objc final public func setString(_ string: Swift.String, forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func string(forKey key: Swift.String, withPrompt userPrompt: Swift.String) throws(Valet.KeychainError) -> Swift.String
+  @objc final public func removeObject(forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func removeAllObjects() throws(Valet.KeychainError)
+  @objc final public func migrateObjects(matching query: [Swift.String : Swift.AnyHashable], removeOnCompletion: Swift.Bool) throws
+  @objc final public func migrateObjects(from valet: Valet.Valet, removeOnCompletion: Swift.Bool) throws
+  @objc deinit
+}
+extension Valet.SecureEnclaveValet {
+  @objc(valetWithIdentifier:accessControl:) final public class func 🚫swift_valet(with identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SecureEnclaveValet?
+  @objc(sharedGroupValetWithAppIDPrefix:sharedGroupIdentifier:accessControl:) final public class func 🚫swift_sharedGroupValet(appIDPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SecureEnclaveValet?
+  @objc(sharedGroupValetWithGroupPrefix:sharedGroupIdentifier:accessControl:) final public class func 🚫swift_sharedGroupValet(groupPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SecureEnclaveValet?
+  @available(swift, obsoleted: 1.0)
+  @objc(containsObjectForKey:) final public func 🚫swift_containsObject(forKey key: Swift.String) -> Swift.Bool
+}
+public struct SharedGroupIdentifier : Swift.CustomStringConvertible, Swift.Sendable {
+  public init?(appIDPrefix: Swift.String, nonEmptyGroup groupIdentifier: Swift.String?)
+  public init?(groupPrefix: Swift.String, nonEmptyGroup groupIdentifier: Swift.String?)
+  public var description: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VALSinglePromptSecureEnclaveValet) final public class SinglePromptSecureEnclaveValet : ObjectiveC.NSObject, @unchecked Swift.Sendable {
+  final public class func valet(with identifier: Valet.Identifier, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SinglePromptSecureEnclaveValet
+  final public class func sharedGroupValet(with groupIdentifier: Valet.SharedGroupIdentifier, identifier: Valet.Identifier? = nil, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SinglePromptSecureEnclaveValet
+  public static func == (lhs: Valet.SinglePromptSecureEnclaveValet, rhs: Valet.SinglePromptSecureEnclaveValet) -> Swift.Bool
+  @available(*, unavailable)
+  @objc override dynamic public init()
+  @objc override final public var hash: Swift.Int {
+    @objc get
+  }
+  final public let identifier: Valet.Identifier
+  @objc final public let accessControl: Valet.SecureEnclaveAccessControl
+  @objc final public func canAccessKeychain() -> Swift.Bool
+  @objc final public func setObject(_ object: Foundation.Data, forKey key: Swift.String) throws
+  @objc final public func object(forKey key: Swift.String, withPrompt userPrompt: Swift.String) throws -> Foundation.Data
+  final public func containsObject(forKey key: Swift.String) throws -> Swift.Bool
+  @objc final public func setString(_ string: Swift.String, forKey key: Swift.String) throws
+  @objc final public func string(forKey key: Swift.String, withPrompt userPrompt: Swift.String) throws -> Swift.String
+  @objc final public func requirePromptOnNextAccess()
+  @objc final public func allKeys(userPrompt: Swift.String) throws -> Swift.Set<Swift.String>
+  @objc final public func removeObject(forKey key: Swift.String) throws
+  @objc final public func removeAllObjects() throws
+  @objc final public func migrateObjects(matching query: [Swift.String : Swift.AnyHashable], removeOnCompletion: Swift.Bool) throws
+  @objc final public func migrateObjects(from valet: Valet.Valet, removeOnCompletion: Swift.Bool) throws
+  @objc deinit
+}
+extension Valet.SinglePromptSecureEnclaveValet {
+  @objc(valetWithIdentifier:accessControl:) final public class func 🚫swift_valet(with identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SinglePromptSecureEnclaveValet?
+  @objc(sharedGroupValetWithAppIDPrefix:sharedGroupIdentifier:accessControl:) final public class func 🚫swift_sharedGroupValet(appIDPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SinglePromptSecureEnclaveValet?
+  @objc(sharedGroupValetWithGroupPrefix:sharedGroupIdentifier:accessControl:) final public class func 🚫swift_sharedGroupValet(groupPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessControl: Valet.SecureEnclaveAccessControl) -> Valet.SinglePromptSecureEnclaveValet?
+  @available(swift, obsoleted: 1.0)
+  @objc(containsObjectForKey:) final public func 🚫swift_containsObject(forKey key: Swift.String) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(VALValet) final public class Valet : ObjectiveC.NSObject, Swift.Sendable {
+  final public class func valet(with identifier: Valet.Identifier, accessibility: Valet.Accessibility) -> Valet.Valet
+  final public class func iCloudValet(with identifier: Valet.Identifier, accessibility: Valet.CloudAccessibility) -> Valet.Valet
+  final public class func sharedGroupValet(with groupIdentifier: Valet.SharedGroupIdentifier, identifier: Valet.Identifier? = nil, accessibility: Valet.Accessibility) -> Valet.Valet
+  final public class func iCloudSharedGroupValet(with groupIdentifier: Valet.SharedGroupIdentifier, identifier: Valet.Identifier? = nil, accessibility: Valet.CloudAccessibility) -> Valet.Valet
+  public static func == (lhs: Valet.Valet, rhs: Valet.Valet) -> Swift.Bool
+  @available(*, unavailable)
+  @objc override dynamic public init()
+  @objc override final public var description: Swift.String {
+    @objc get
+  }
+  @objc override final public var hash: Swift.Int {
+    @objc get
+  }
+  @objc final public let accessibility: Valet.Accessibility
+  final public let identifier: Valet.Identifier
+  @objc final public func canAccessKeychain() -> Swift.Bool
+  @objc final public func setObject(_ object: Foundation.Data, forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func object(forKey key: Swift.String) throws(Valet.KeychainError) -> Foundation.Data
+  final public func containsObject(forKey key: Swift.String) throws(Valet.KeychainError) -> Swift.Bool
+  @objc final public func setString(_ string: Swift.String, forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func string(forKey key: Swift.String) throws(Valet.KeychainError) -> Swift.String
+  @objc final public func allKeys() throws(Valet.KeychainError) -> Swift.Set<Swift.String>
+  @objc final public func removeObject(forKey key: Swift.String) throws(Valet.KeychainError)
+  @objc final public func removeAllObjects() throws(Valet.KeychainError)
+  final public func migrateObjects(matching query: [Swift.String : Swift.AnyHashable], compactMap: (Valet.MigratableKeyValuePair<Swift.AnyHashable>) throws -> Valet.MigratableKeyValuePair<Swift.String>?) throws
+  @objc final public func migrateObjects(matching query: [Swift.String : Swift.AnyHashable], removeOnCompletion: Swift.Bool) throws
+  final public func migrateObjects(from valet: Valet.Valet, compactMap: (Valet.MigratableKeyValuePair<Swift.AnyHashable>) throws -> Valet.MigratableKeyValuePair<Swift.String>?) throws
+  @objc final public func migrateObjects(from valet: Valet.Valet, removeOnCompletion: Swift.Bool) throws
+  @objc final public func migrateObjectsFromAlwaysAccessibleValet(removeOnCompletion: Swift.Bool) throws
+  @objc final public func migrateObjectsFromAlwaysAccessibleThisDeviceOnlyValet(removeOnCompletion: Swift.Bool) throws
+  @objc deinit
+}
+extension Valet.Valet {
+  @available(swift, obsoleted: 1.0)
+  @objc(valetWithIdentifier:accessibility:) final public class func 🚫swift_vanillaValet(with identifier: Swift.String, accessibility: Valet.Accessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(iCloudValetWithIdentifier:accessibility:) final public class func 🚫swift_iCloudValet(with identifier: Swift.String, accessibility: Valet.CloudAccessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(sharedGroupValetWithAppIDPrefix:sharedGroupIdentifier:accessibility:) final public class func 🚫swift_vanillaSharedGroupValet(appIDPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessibility: Valet.Accessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(sharedGroupValetWithGroupPrefix:sharedGroupIdentifier:accessibility:) final public class func 🚫swift_vanillaSharedGroupValet(groupPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessibility: Valet.Accessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(iCloudValetWithAppIDPrefix:sharedGroupIdentifier:accessibility:) final public class func 🚫swift_iCloudSharedGroupValet(appIDPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessibility: Valet.CloudAccessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(iCloudValetWithGroupPrefix:sharedGroupIdentifier:accessibility:) final public class func 🚫swift_iCloudSharedGroupValet(groupPrefix: Swift.String, nonEmptyIdentifier identifier: Swift.String, accessibility: Valet.CloudAccessibility) -> Valet.Valet?
+  @available(swift, obsoleted: 1.0)
+  @objc(containsObjectForKey:) final public func 🚫swift_containsObject(forKey key: Swift.String) -> Swift.Bool
+  @available(swift, obsoleted: 1.0)
+  @objc(migrateObjectsMatching:compactMap:error:) final public func 🚫swift_migrateObjects(matching query: [Swift.String : Swift.AnyHashable], compactMap: (Valet.ObjectiveCCompatibilityMigratableKeyValuePairInput) -> Valet.ObjectiveCCompatibilityMigratableKeyValuePairOutput?) throws
+  @available(swift, obsoleted: 1.0)
+  @objc(migrateObjectsFrom:compactMap:error:) final public func 🚫swift_migrateObjects(from valet: Valet.Valet, compactMap: (Valet.ObjectiveCCompatibilityMigratableKeyValuePairInput) -> Valet.ObjectiveCCompatibilityMigratableKeyValuePairOutput?) throws
+}
+extension Valet.Accessibility : Swift.Hashable {}
+extension Valet.Accessibility : Swift.RawRepresentable {}
+extension Valet.CloudAccessibility : Swift.Hashable {}
+extension Valet.CloudAccessibility : Swift.RawRepresentable {}
+extension Valet.KeychainError : Swift.Hashable {}
+extension Valet.KeychainError : Swift.RawRepresentable {}
+extension Valet.MigrationError : Swift.Hashable {}
+extension Valet.MigrationError : Swift.RawRepresentable {}
+extension Valet.SecureEnclaveAccessControl : Swift.Hashable {}
+extension Valet.SecureEnclaveAccessControl : Swift.RawRepresentable {}

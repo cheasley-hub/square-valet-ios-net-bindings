@@ -1,0 +1,14 @@
+﻿<BindingAssembly>
+	<NativeReference Name="Valet.xcframework">
+		<ForceLoad>true</ForceLoad>
+		<Frameworks>Security</Frameworks>
+		<IdentityWithoutPathSeparatorSuffix>Native/Valet.xcframework</IdentityWithoutPathSeparatorSuffix>
+		<IsCxx></IsCxx>
+		<Kind>Framework</Kind>
+		<LinkerFlags>-ObjC</LinkerFlags>
+		<LinkWithSwiftSystemLibraries></LinkWithSwiftSystemLibraries>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<SmartLink>true</SmartLink>
+		<WeakFrameworks></WeakFrameworks>
+	</NativeReference>
+</BindingAssembly>
