@@ -10,13 +10,15 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("YourOrg")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Cody Heasley")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute(".NET 8 bindings for Square Valet (Keychain/Secure Enclave helper).")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0-local")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0-beta+2a13d697b10e6c100b9eade0ec126672b0f05a54")]
 [assembly: System.Reflection.AssemblyProductAttribute("SquareValetBindings")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SquareValetBindings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/cheasley-hub/square-valet-ios-net-bindings")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS18.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("iOS18.0")]
 

@@ -7,10 +7,17 @@
         <Frameworks>Security</Frameworks>
         <EnableSwiftSupport>true</EnableSwiftSupport>
         <PackageId>SquareValetBindings</PackageId>
-        <Version>0.1.0-local</Version>
-        <Authors>YourName</Authors>
-        <Company>YourOrg</Company>
-        <PackageTags>xamarin;ios;valet;keychain</PackageTags>
+        <Version>0.1.0-beta</Version>
+        <Authors>Cody Heasley</Authors>
+        <Company>Cody Heasley</Company>
+        <Description>.NET 8 bindings for Square Valet (Keychain/Secure Enclave helper).</Description>
+        <PackageTags>net;ios;valet;keychain;square</PackageTags>
+
+        <PackageProjectUrl>https://github.com/cheasley-hub/square-valet-ios-net-bindings</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/cheasley-hub/square-valet-ios-net-bindings</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
